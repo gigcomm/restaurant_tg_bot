@@ -1,10 +1,15 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
-#ReplyKeyboardRemove - удаление клавиатуры с кнопками(исполльзовать в хэнлерах)
-button1 = KeyboardButton('\Режим работы')
-button2 = KeyboardButton('\Меню')
-# button3 = KeyboardButton('Поделится номером', request_contact=True)
-# button4 = KeyboardButton('Поделится метоположением', request_location=True)
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-kd_client = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
 
-kd_client.add(button1).add(button2)
+button1 = KeyboardButton('Режим работы')
+button2 = KeyboardButton('Меню')
+button3 = KeyboardButton('Корзина')
+button8 = KeyboardButton('Сделать заказ')
+button9 = KeyboardButton('Отмена')
+
+kd_client = ReplyKeyboardMarkup(resize_keyboard=True)
+kb_client_cart = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+kb_client_order = ReplyKeyboardMarkup(resize_keyboard=True)
+kd_client.add(button2).add(button3).row(button1)
+kb_client_cart.add(button8).add(button3).add(button2)
+
